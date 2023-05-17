@@ -1,15 +1,17 @@
 import express from "express";
 import { InjectedTimeService } from "./service/injectedTimeService";
+import { TimeService } from "./service/nonInjectedTimeService";
 
 const app = express();
-const port = 3000;
+const port = 3123;
 
 app.get("/untested", (req, res) => {
   res.send(new Date().toISOString());
 });
 
 app.get("/noninjected", (req, res) => {
-  res.send(new Date().getTime().toString());
+  const noninjected = new TimeService();
+  res.send(noninjected.getCurrentIsoString());
 });
 
 app.get("/injected", (req, res) => {
