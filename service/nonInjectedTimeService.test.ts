@@ -1,4 +1,4 @@
-import { TimeService } from "./service";
+import { TimeService } from "./nonInjectedTimeService";
 
 describe('time service', () => {
   it('should return with the current time', () => { 
