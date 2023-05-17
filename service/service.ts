@@ -1,8 +1,5 @@
-
 export class TimeService {
-  constructor() {
-    
-  }
+  constructor() {}
 
   getDay() {
     return new Date().getDay();
